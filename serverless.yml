@@ -43,7 +43,7 @@ package:
 
 functions:
   r4:
-    handler: CsharpHandlers::AwsDotnetCsharp.Handler::Main
+    handler: CsharpHandlers::AwsDotnetCsharp.Function::Handler
 
     # you can add packaging information here
     package:
@@ -54,10 +54,10 @@ functions:
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
-    # events:
-    #   - httpApi:
-    #     path: fhir/anonymize/r4
-    #     method: get
+    events:
+      - httpApi:
+          path: /fhir/anonymize/r4
+          method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
