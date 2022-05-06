@@ -1,17 +1,19 @@
+using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
 
 [assembly:LambdaSerializer(
   typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
-namespace AwsDotnetCsharp;
-public class Function
-{
-    public APIGatewayProxyResponse Handler(APIGatewayProxyRequest request)
-    {
-      return new APIGatewayProxyResponse
+namespace AwsDotnetCsharp{
+  public class Function
+  {
+      public APIGatewayProxyResponse Handler(APIGatewayProxyRequest request)
       {
-          Body = request.Body,
-          StatusCode = 200,
-      };
+        return new APIGatewayProxyResponse
+        {
+            Body = request.Body,
+            StatusCode = 200,
+        };
+    }
   }
 }
