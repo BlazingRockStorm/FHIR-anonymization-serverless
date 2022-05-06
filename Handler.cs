@@ -1,9 +1,10 @@
-[assembly:LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
+[assembly:LambdaSerializer(
+  typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
 namespace AwsDotnetCsharp;
 public class Handler
 {
-    public Response Hello(Request request)
+    public Response Main(Request request)
     {
         return new Response("Go Serverless v1.0! Your function executed successfully!", request);
     }
