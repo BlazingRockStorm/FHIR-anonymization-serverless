@@ -9,13 +9,13 @@ using Amazon.Lambda.APIGatewayEvents;
 namespace AwsDotnetCsharp{
   public class Function
   {
-      public APIGatewayProxyResponse Handler(APIGatewayProxyRequest proxyRequest)
+    public APIGatewayProxyResponse Handler(APIGatewayProxyRequest proxyRequest)
+    {
+      return new APIGatewayProxyResponse
       {
-        return new APIGatewayProxyResponse
-        {
-            Body = proxyRequest.Body,
-            StatusCode = 200,
-        };
+        Body = proxyRequest.Body,
+        StatusCode = 200,
+      };
     }
   }
 }
