@@ -1,5 +1,3 @@
-using System;
-using System.Net.Http;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
 
@@ -9,7 +7,7 @@ using Amazon.Lambda.APIGatewayEvents;
 namespace AwsDotnetCsharp{
   public class Function
   {
-    public APIGatewayProxyResponse Handler(APIGatewayProxyRequest proxyRequest)
+    public APIGatewayProxyResponse HandlerR4(APIGatewayProxyRequest proxyRequest)
     {
       return new APIGatewayProxyResponse
       {

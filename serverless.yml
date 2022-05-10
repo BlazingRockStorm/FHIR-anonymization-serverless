@@ -43,11 +43,11 @@ package:
 
 functions:
   r4:
-    handler: CsharpHandlers::AwsDotnetCsharp.Function::Handler
+    handler: CsharpHandlers::AwsDotnetCsharp.Function::HandlerR4
 
     # you can add packaging information here
     package:
-      artifact: bin/Release/netcoreapp3.1/hello.zip
+      artifact: bin/Release/netcoreapp3.1/fhir-anonymization-serverless.zip
     #  exclude:
     #    - exclude-me.js
     #    - exclude-me-dir/**
