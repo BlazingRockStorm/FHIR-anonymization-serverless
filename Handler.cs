@@ -1,6 +1,7 @@
 using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
 using Microsoft.Health.Fhir.Anonymizer.Core;
+using Microsoft.Health.Fhir.Anonymizer.Core.AnonymizerConfigurations;
 
 [assembly:LambdaSerializer(
   typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
@@ -10,9 +11,12 @@ namespace AwsDotnetCsharp{
   {
     public APIGatewayProxyResponse HandlerR4(APIGatewayProxyRequest proxyRequest)
     {
-      AnonymizerEngine engine = new AnonymizerEngine("r4-configuration-sample.json");
-
-      var output = engine.AnonymizeJson(proxyRequest.Body, null);
+      AnonymizerEngine engine = new AnonymizerEngine("./r4-configuration.json");
+      var settings = new AnonymizerSettings()
+        {
+          IsPrettyOutput = true
+        };
+      var output = engine.AnonymizeJson(proxyRequest.Body, settings);
 
       return new APIGatewayProxyResponse
       {
