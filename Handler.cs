@@ -11,7 +11,8 @@ namespace AwsDotnetCsharp{
   {
     public APIGatewayProxyResponse HandlerR4(APIGatewayProxyRequest proxyRequest)
     {
-      AnonymizerEngine engine = new AnonymizerEngine("./r4-configuration.json");
+      // from FHIR\src\Microsoft.Health.Fhir.Anonymizer.Shared.Core.UnitTests\AnonymizerEngineTests.cs
+      AnonymizerEngine engine = new AnonymizerEngine("r4-configuration.json");
       var settings = new AnonymizerSettings()
         {
           IsPrettyOutput = true
