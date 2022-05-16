@@ -13,6 +13,11 @@
     <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.2.0" />
     <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.4.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Ensure.That" Version="9.2.0" />
+    <PackageReference Include="Hl7.Fhir.R4" Version="3.4.0" />
+    <PackageReference Include="Hl7.FhirPath" Version="3.4.0" />
+    <PackageReference Include="MathNet.Numerics" Version="4.11.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +26,6 @@
     </None>
   </ItemGroup>
 
-  <Import Project=".\Microsoft.Health.Fhir.Anonymizer.R4.Core\Microsoft.Health.Fhir.Anonymizer.R4.Core.csproj" />
+  <Import Project=".\Microsoft.Health.Fhir.Anonymizer.Shared.Core\Microsoft.Health.Fhir.Anonymizer.Shared.Core.projitems" Label="Shared" />
 
 </Project>
