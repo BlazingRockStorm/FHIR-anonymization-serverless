@@ -14,11 +14,25 @@
     <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.4.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Ensure.That" Version="9.2.0" />
+    <PackageReference Include="Hl7.Fhir.Stu3" Version="3.4.0" />
     <PackageReference Include="Hl7.Fhir.R4" Version="3.4.0" />
     <PackageReference Include="Hl7.FhirPath" Version="3.4.0" />
     <PackageReference Include="MathNet.Numerics" Version="4.11.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.2" />
   </ItemGroup>
+
+ <Target Name="ChangeAliasesOfStrongNameAssemblies" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
+    <ItemGroup>
+      <ReferencePath Condition="'%(FileName)' == 'Hl7.Fhir.STU3.Core'">
+        <Aliases>stu3</Aliases>
+      </ReferencePath>
+    </ItemGroup>
+    <ItemGroup>
+      <ReferencePath Condition="'%(FileName)' == 'Hl7.Fhir.R4.Core'">
+        <Aliases>r4</Aliases>
+      </ReferencePath>
+    </ItemGroup>
+  </Target>
 
   <ItemGroup>
     <None Update="r4-configuration.json">
